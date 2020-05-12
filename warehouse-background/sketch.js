@@ -1,12 +1,15 @@
 //create an empty array called balls
 let me;
-let ducks = [];
+let duck1;
+let duck2;
+let duck3;
 
 function setup() {
   createCanvas(800, 400);
   me = new Avatar(width/20, 250, 3);
-  ducks = new Duck(700,98);
-  //ducks = new Duck(210,160); //this is a second duck I want
+  duck1 = new Duck(700,98);
+  duck2 = new Duck(210,160);
+  duck3 = new Duck(630,208);
 }
 
 function draw(){
@@ -17,8 +20,14 @@ function draw(){
   me.drawMe();
   me.moveMe();
 
-  ducks.drawDuck();
-  ducks.collectDuck();
+  duck1.drawDuck();
+  duck1.collectDuck();
+
+  duck2.drawDuck();
+  duck2.collectDuck();
+
+  duck3.drawDuck();
+  duck3.collectDuck();
 
 
 }
