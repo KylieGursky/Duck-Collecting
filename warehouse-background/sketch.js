@@ -3,6 +3,11 @@ let me;
 let duck1;
 let duck2;
 let duck3;
+let duck4;
+let duck5;
+let duck6;
+let duck7;
+let duck8;
 
 function setup() {
   createCanvas(800, 400);
@@ -10,11 +15,17 @@ function setup() {
   duck1 = new Duck(700,98);
   duck2 = new Duck(210,160);
   duck3 = new Duck(630,208);
+  duck4 = new Duck(310,218);
+  duck5 = new Duck(650,98);
+  duck6 = new Duck(400,295);
+  duck7 = new Duck(660,295);
+  duck8 = new Duck(140,190);
 }
 
 function draw(){
 	background(128,128,128);
   world();
+  endgame();
 
 
   me.drawMe();
@@ -28,6 +39,21 @@ function draw(){
 
   duck3.drawDuck();
   duck3.collectDuck();
+
+  duck4.drawDuck();
+  duck4.collectDuck();
+
+  duck5.drawDuck();
+  duck5.collectDuck();
+
+  duck6.drawDuck();
+  duck6.collectDuck();
+
+  duck7.drawDuck();
+  duck7.collectDuck();
+
+  duck8.drawDuck();
+  duck8.collectDuck();
 
 
 }
@@ -203,7 +229,7 @@ class Avatar {
       }
     }
 
-    print(me.x, me.y)
+
     }
 
 
@@ -229,10 +255,29 @@ class Duck {
 
 	//if the person hits the duck, move the duck to 20,20
   collectDuck(){
-      if (this.x >= me.x-15 && this.x <= me.x+15 && this.y > me.y-40 && this.y < me.y+80){
+      if (this.x >= me.x-15 && this.x <= me.x+15 && this.y > me.y-50 && this.y < me.y+80){
           this.x = this.x-680;
           this.y = this.y-78;
 
     		}
   	}
 }
+
+function endgame() {
+  if (duck1.x <200 ){
+    textSize(180);
+    fill(255,255,255);
+    noStroke();
+    textFont('Impact');
+    text('CONGRATS.', 1, 280);
+    print("end");
+
+  }
+}
+
+// let timer = 100;
+// textSize(40);
+// text(timer,50,50);
+// if(keyIsPressed === true){
+//   timer = timer-1;
+// }
