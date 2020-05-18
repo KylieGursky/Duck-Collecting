@@ -12,14 +12,14 @@ let duck8;
 function setup() {
   createCanvas(800, 400);
   me = new Avatar(width/20, 250, 3);
-  duck1 = new Duck(700,98);
-  duck2 = new Duck(210,160);
-  duck3 = new Duck(630,208);
-  duck4 = new Duck(310,218);
-  duck5 = new Duck(650,98);
-  duck6 = new Duck(400,295);
-  duck7 = new Duck(660,295);
-  duck8 = new Duck(140,190);
+  duck1 = new Duckz(700,98);
+  duck2 = new Duckz(210,160);
+  duck3 = new Duckz(630,208);
+  duck4 = new Duckz(310,218);
+  duck5 = new Duckz(650,98);
+  duck6 = new Duckz(400,295);
+  duck7 = new Duckz(660,295);
+  duck8 = new Duckz(140,190);
 }
 
 function draw(){
@@ -31,29 +31,29 @@ function draw(){
   me.drawMe();
   me.moveMe();
 
-  duck1.drawDuck();
-  duck1.collectDuck();
+  duck1.drawDuckz();
+  duck1.collectDuckz();
 
-  duck2.drawDuck();
-  duck2.collectDuck();
+  duck2.drawDuckz();
+  duck2.collectDuckz();
 
-  duck3.drawDuck();
-  duck3.collectDuck();
+  duck3.drawDuckz();
+  duck3.collectDuckz();
 
-  duck4.drawDuck();
-  duck4.collectDuck();
+  duck4.drawDuckz();
+  duck4.collectDuckz();
 
-  duck5.drawDuck();
-  duck5.collectDuck();
+  duck5.drawDuckz();
+  duck5.collectDuckz();
 
-  duck6.drawDuck();
-  duck6.collectDuck();
+  duck6.drawDuckz();
+  duck6.collectDuckz();
 
-  duck7.drawDuck();
-  duck7.collectDuck();
+  duck7.drawDuckz();
+  duck7.collectDuckz();
 
-  duck8.drawDuck();
-  duck8.collectDuck();
+  duck8.drawDuckz();
+  duck8.collectDuckz();
 
 
 }
@@ -239,14 +239,14 @@ class Avatar {
 }
 
 
-class Duck {
+class Duckz {
 	constructor(x,y){
 		this.x = x;
     this.y = y;
 	}
 
 	// draw a duck on the screen at x,y which is called at the top
-	drawDuck(){
+	drawDuckz(){
     fill(255,219,77);
     noStroke();
     ellipse(this.x,this.y,20,20);
@@ -254,7 +254,7 @@ class Duck {
 
 
 	//if the person hits the duck, move the duck to 20,20
-  collectDuck(){
+  collectDuckz(){
       if (this.x >= me.x-15 && this.x <= me.x+15 && this.y > me.y-50 && this.y < me.y+80){
           this.x = this.x-680;
           this.y = this.y-78;
