@@ -16,6 +16,16 @@ let duck7;
 let duck8;
 let duck9;
 
+let duck10;
+let duck11;
+let duck12;
+let duck13;
+let duck14;
+let duck15;
+let duck16;
+let duck17;
+
+
 function preload() {
 farmhouse = loadImage('pictures/farmhouse.png')
 rowboat = loadImage('pictures/rowboat.png')
@@ -35,7 +45,15 @@ function setup() {
   duck7 = new Duck(444,333)
   duck8 = new Duck(350,80)
   duck9 = new Duck(80,250)
-  me2 = new Person((width/20, 250, 3);
+  me2 = new Person(width/20, 250, 3);
+  duck14 = new Duck(700,98);
+  duck10 = new Duck(210,160);
+  duck11 = new Duck(630,208);
+  duck12 = new Duck(310,218);
+  duck13 = new Duck(650,98);
+  duck15 = new Duck(400,295);
+  duck16 = new Duck(660,295);
+  duck17 = new Duck(140,190);
 }
 
 function draw() {
@@ -132,8 +150,26 @@ function screen1(){
 function screen2(){
   background(128,128,128)
   world()
+  endgame()
   me2.moveMe();
   me2.drawMe();
+  duck14.drawDuck();
+  duck14.collectDuck();
+  duck10.drawDuck();
+  duck10.collectDuck();
+  duck11.drawDuck();
+  duck11.collectDuck();
+  duck12.drawDuck();
+  duck12.collectDuck();
+  duck13.drawDuck();
+  duck13.collectDuck();
+  duck15.drawDuck();
+  duck15.collectDuck();
+  duck16.drawDuck();
+  duck16.collectDuck();
+  duck17.drawDuck();
+  duck17.collectDuck();
+
 }
 
 
@@ -196,10 +232,10 @@ class Duck{
   drawDuck(){
     fill(255,219,77)
     noStroke()
-    ellipse(this.x,this.y,10,8)
-    ellipse(this.x-3,this.y-4.5,6,6)
+    ellipse(this.x,this.y,15,12)
+    ellipse(this.x-3,this.y-4.5,10,10)
     fill("orange")
-    ellipse(this.x-6,this.y-4.5,3,2)
+    ellipse(this.x-8,this.y-4.5,6,4)
   }
 
   moveDuck(){
@@ -210,6 +246,10 @@ class Duck{
     if (this.x >= me.x-15 && this.x<= me.x+15 && this.y > me.y-20 && this.y < me.y+20){
       this.x = 20;
       this.y = 20;
+    }
+    if (this.x >= me2.x-30 && this.x<= me2.x+30 && this.y > me2.y-40 && this.y < me2.y+40){
+      this.x = this.x-680;
+      this.y = this.y-78;
     }
   }
 }
@@ -405,13 +445,13 @@ class Person {
         this.x += this.speed;
     }
 
-    if (me.x >= 475 && me.x <= 521 && me.y >= 20 && me.y <=254){
+    if (me2.x >= 475 && me2.x <= 521 && me2.y >= 20 && me2.y <=254){
       if (keyIsDown(UP_ARROW)) { //if you hold the up arrow, move up by speed
          this.y -= this.speed;
       }
     }
 
-    if (me.x >= 475 && me.x <= 521 && me.y >= 18 && me.y <=250){
+    if (me2.x >= 475 && me2.x <= 521 && me2.y >= 18 && me2.y <=250){
       if (keyIsDown(DOWN_ARROW)) { // if you hold the down arrow, move down by speed
           this.y += this.speed;
       }
@@ -419,3 +459,15 @@ class Person {
 
     }
   }
+
+  function endgame() {
+  if (duck14.x <200 ){
+    textSize(180);
+    fill(255,255,255);
+    noStroke();
+    textFont('Impact');
+    text('CONGRATS.', 1, 280);
+    print("end");
+
+  }
+}
