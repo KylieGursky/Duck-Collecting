@@ -274,10 +274,3 @@ function endgame() {
 
   }
 }
-
-// let timer = 100;
-// textSize(40);
-// text(timer,50,50);
-// if(keyIsPressed === true){
-//   timer = timer-1;
-// }
